@@ -1,10 +1,7 @@
 package test06;
 
 import java.awt.*;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 import static com.sun.glass.ui.Cursor.setVisible;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
@@ -45,7 +42,7 @@ public class SignalFrame extends Frame implements ItemListener{
     }
 
     public void itemStateChanged(ItemEvent e) {
-        String item = (String) e.getItem();  // choice返回被选中的条目
+        String item = (String) choice.getSelectedItem();  // choice返回被选中的条目
         int w = signal.getBounds().width;
         int h = signal.getBounds().height;
         int m = Math.min(w, h);
