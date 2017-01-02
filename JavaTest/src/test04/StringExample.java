@@ -28,7 +28,7 @@ public class StringExample {
         int position = 0;
         String path = "c:\\java\\jsp\\A.java";
         position = path.lastIndexOf("\\");//获取path中最后出现目录分隔符号的位置
-        System.out.println("c:\\java\\jsp\\A.java中最后出现\\的位置:" + position);
+        System.out.println("c:\\java\\jsp\\A.java中最后出现的位置:" + position);
 
         String fileName = path.substring(position);//获取path中“A.java”子字符串。
         System.out.println("c:\\java\\jsp\\A.java中含有的文件名:" + fileName);

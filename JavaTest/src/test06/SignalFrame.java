@@ -13,13 +13,14 @@ import static com.sun.javafx.fxml.expression.Expression.add;
 public class SignalFrame extends Frame implements ItemListener{
     Choice choice;
     SignalCanvas signal = null;
-    String itemRed = "红灯", itemYellow = "黄灯", itemGreen = "绿灯";
+    String itemRed = "红灯", itemYellow = "黄灯", itemGreen = "绿灯", itemNull = "熄灭所有灯";
 
     public SignalFrame() {
         choice = new Choice();          //创建choice
         choice.add(itemRed);               //创建choice添加itemRed
         choice.add(itemYellow);              //创建choice添加itemYellow
         choice.add(itemGreen);                //创建choice添加itemGreen
+        choice.add(itemNull);
         choice.addItemListener(this);  //将当前窗口注册为choice的ItemEvent事件监视器
         add(choice, BorderLayout.NORTH);
         try {
@@ -71,6 +72,12 @@ public class SignalFrame extends Frame implements ItemListener{
                 signal.setPosition(w / 3, 2 * h / 3);
                 signal.repaint();
             }
+        } else if (item.equals(itemNull)){
+            signal.setRed(0);
+            signal.setYellow(0);
+            signal.setGreen(0);
+            signal.setPosition(0, 0);
+            signal.repaint();
         }
     }
 
